@@ -19,7 +19,7 @@ const Tictactoe = () => {
                 if(data[num] !== "") return 0;
                 e.target.innerHTML = `<img src=${cross_icon} />`;
                 data[num] = "x";
-                setCount((prevCount) => preCount + 1 );
+                setCount((prevCount) => prevCount + 1 );
             }else{
                 if (data[num] !== "") return 0;
                 e.target.innerHTML = `<img src=${circle_icon} />`;
@@ -28,26 +28,26 @@ const Tictactoe = () => {
             }
             checkWin();
         }
-    const checkWin = ()=>{
-        if(data[0]===data[1] && data[1] === data[2] && data[0] != ""){
-            won(data[0]);
-        }else if (data[3]===data[4] && data[4] === data[5] && data[3] != ""){
-          won(data[3]);
-        }else if (data[6]===data[7] && data[7] === data[8] && data[6] != ""){
-          won(data[6]);
-        }else if (data[0]===data[3] && data[3] === data[6] && data[0] != ""){
-          won(data[0]);
-        } else if (data[1]===data[4] && data[4] === data[7] && data[1] != ""){
-          won(data[1]);
-        }else if (data[2]===data[5] && data[5] === data[8] && data[0] != ""){
-          won(data[2]);     
-        }else if (data[0]===data[4] && data[4] === data[6] && data[2] != ""){
-          won(data[0]);     
-        }else if (data[2]===data[4] && data[4] === data[6] && data[2] != ""){
-          won(data[2]);     
-        }else if(count === 9){
-            titleRef.current.innerHTML = "Draw"
-        }
+    const checkWin = () => {
+      if (data[0] === data[1] && data[1] === data[2] && data[0] != "") {
+        won(data[0]);
+      } else if (data[3] === data[4] && data[4] === data[5] && data[3] !== "") {
+        won(data[3]);
+      } else if (data[6] === data[7] && data[7] === data[8] && data[6] !== "") {
+        won(data[6]);
+      } else if (data[0] === data[3] && data[3] === data[6] && data[0] !== "") {
+        won(data[0]);
+      } else if (data[1] === data[4] && data[4] === data[7] && data[1] !== "") {
+        won(data[1]);
+      } else if (data[2] === data[5] && data[5] === data[8] && data[2] !== "") {
+        won(data[2]);
+      } else if (data[0] === data[4] && data[4] === data[8] && data[0] !== "") {
+        won(data[0]);
+      } else if (data[2] === data[4] && data[4] === data[6] && data[2] !== "") {
+        won(data[2]);
+      } else if (count === 9) {
+        titleRef.current.innerHTML = "Draw";
+      }
     };
     const won = (winner) =>{
         setLock(true);
@@ -77,19 +77,19 @@ const Tictactoe = () => {
           <div
             className="boxes"
             onClick={(e) => {
-              Toggle(e, 0);
+              toggle(e, 0);
             }}
           ></div>
           <div
             className="boxes"
             onClick={(e) => {
-              Toggle(e, 1);
+              toggle(e, 1);
             }}
           ></div>
           <div
             className="boxes"
             onClick={(e) => {
-              Toggle(e, 2);
+              toggle(e, 2);
             }}
           ></div>
         </div>
@@ -97,19 +97,19 @@ const Tictactoe = () => {
           <div
             className="boxes"
             onClick={(e) => {
-              Toggle(e, 3);
+              toggle(e, 3);
             }}
           ></div>
           <div
             className="boxes"
             onClick={(e) => {
-              Toggle(e, 4);
+              toggle(e, 4);
             }}
           ></div>
           <div
             className="boxes"
             onClick={(e) => {
-              Toggle(e, 5);
+              toggle(e, 5);
             }}
           ></div>
         </div>
@@ -117,19 +117,19 @@ const Tictactoe = () => {
           <div
             className="boxes"
             onClick={(e) => {
-              Toggle(e, 6);
+              toggle(e, 6);
             }}
           ></div>
           <div
             className="boxes"
             onClick={(e) => {
-              Toggle(e, 7);
+              toggle(e, 7);
             }}
           ></div>
           <div
             className="boxes"
             onClick={(e) => {
-              Toggle(e, 8);
+              toggle(e, 8);
             }}
           ></div>
         </div>
